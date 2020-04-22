@@ -1,0 +1,13 @@
+---
+applications:
+- name: scheduler
+  memory: 1G
+  path: ./target/scheduling-tasks-0.0.1-SNAPSHOT.jar
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git
+  no-route: true
+  health-check-type: process
+  env:
+    ELASTIC_APM_APPLICATION_PACKAGES: com.example.schedulingtasks
+  services:
+    - elastic-apm-service 
