@@ -18,7 +18,6 @@ java -javaagent:./${AGENT_FILE} \
 -Delastic.apm.enable_log_correlation=true \
 -jar target/scheduling-tasks-0.0.1-SNAPSHOT.jar
 
-
-# Add this to above if you have a self signed cert for testing 
+# Add this to above if you have a self signed cert for testing and for testing
 # -Delastic.apm.log_level=debug \
-#-Delastic.apm.verify_server_cert=false \
+# -Delastic.apm.verify_server_cert=false \

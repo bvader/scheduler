@@ -14,19 +14,25 @@ import co.elastic.apm.api.*;
 public class ScheduledTasks {
 
 	private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
-
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
 	@Scheduled(fixedRate = 5000)
 	@CaptureTransaction
 	@CaptureSpan
 	public void doTask() {
-		log.info("in doTask");
-		task();
+		Transaction transaction = ElasticApm.currentTransaction();
+		transaction.setName("Schedule-txn");
+		ElasticApm.currentSpan().setName("Schedule-span");
+		transaction.addLabel("label1", dateFormat.format(new Date()));
+		log.info("In doTask {}", dateFormat.format(new Date()));
+		taskDetail();
 	}
 
 	@CaptureSpan
-	public void task() {
-		log.info("In task {}", dateFormat.format(new Date()));
+	public void taskDetail() {
+		log.info("In taskDetail {}", dateFormat.format(new Date()));
+		Span span = ElasticApm.currentSpan();
+		span.setName("task-detail-span");
+		span.addLabel("TASK-DETAIL-SPAN-LABEL", "task-span-label-value");
 	}
 }

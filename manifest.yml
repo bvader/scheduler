@@ -1,6 +1,6 @@
 ---
 applications:
-- name: scheduler
+- name: scheduler-5s
   memory: 1G
   path: ./target/scheduling-tasks-0.0.1-SNAPSHOT.jar
   buildpacks:
