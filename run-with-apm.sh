@@ -1,7 +1,7 @@
 #!/bin/bash
 # set -x
 
-AGENT_VERSION=1.15.0
+AGENT_VERSION=1.18.0
 AGENT_FILE=elastic-apm-agent-${AGENT_VERSION}.jar
 
 if [ ! -f "${AGENT_FILE}" ]; then

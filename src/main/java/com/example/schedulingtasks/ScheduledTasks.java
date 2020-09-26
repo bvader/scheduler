@@ -16,7 +16,7 @@ public class ScheduledTasks {
 	private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-	@Scheduled(fixedRate = 200)
+	@Scheduled(fixedRate = 1000)
 	@CaptureTransaction
 	@CaptureSpan
 	public void doTask() {
