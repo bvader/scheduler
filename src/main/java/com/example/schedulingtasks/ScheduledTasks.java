@@ -14,9 +14,9 @@ import co.elastic.apm.api.*;
 public class ScheduledTasks {
 
 	private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
-	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss.SSS");
 
-	@Scheduled(fixedRate = 1000)
+	@Scheduled(fixedRate = 200)
 	@CaptureTransaction
 	@CaptureSpan
 	public void doTask() {
