@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>co.elastic.apm</groupId>
 			<artifactId>apm-agent-api</artifactId>
-			<version>1.15.0</version>
+			<version>1.18.1</version>
 	  </dependency>
 
 		<dependency>
